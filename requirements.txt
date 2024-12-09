@@ -1,0 +1,6 @@
+flask==2.3.2
+transformers==4.46.0
+torch
+pytest==7.4.0
+werkzeug==2.3.7
+

@@ -1,0 +1,5 @@
+[
+    {"text": "I absolutely love this product!", "expected_label": "POSITIVE"},
+    {"text": "This is the worst thing I've ever bought.", "expected_label": "NEGATIVE"},
+    {"text": "It's okay, I guess.", "expected_label": "POSITIVE"}
+]
