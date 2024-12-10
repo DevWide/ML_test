@@ -1,6 +1,14 @@
-# Import global fixtures or setup configurations here, if needed.
+from flask import Flask, jsonify, request
 
-# Example: Configure logging for all tests
-import logging
+app = Flask(__name__)
 
-logging.basicConfig(level=logging.INFO)
+@app.route('/some-endpoint', methods=['GET'])
+def some_endpoint():
+    return jsonify({"message": "This is some endpoint"}), 200
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.get_json()
+    if not data or "text" not in data:
+        return jsonify({"error": "Invalid input"}), 400
+    return jsonify({"prediction": f"Received: {data['text']}"}), 200

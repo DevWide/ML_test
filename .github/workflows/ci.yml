@@ -13,21 +13,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      # Checkout do repositório
+      - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v3
+      # Configurar Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: 3.12
 
-      - name: Install Dependencies
+      # Configurar ambiente virtual
+      - name: Set up virtual environment
         run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Unit Tests
-        run: pytest app/tests
+      # Executar os testes
+      - name: Run tests
+        run: |
+          source venv/bin/activate
+          pytest app/tests
 
       - name: Run Inference Quality Test
-        run: pytest app/tests/test_inference_quality.py
+        run: | 
+          pytest app/tests/test_inference_quality.py
 

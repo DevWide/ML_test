@@ -17,3 +17,4 @@ def test_predict(client):
     response = client.post("/predict", json={"text": "I love coding!"})
     assert response.status_code == 200
     assert "label" in response.json[0]
+    assert response.json[0]["label"] == "positive"
