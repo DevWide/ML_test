@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Baixar o código do repositório
+      # Checkout do repositório
       - name: Check out repository
         uses: actions/checkout@v3
 
@@ -23,6 +23,15 @@ jobs:
         with:
           python-version: 3.10
 
+      # Limpar ou evitar cache de dependências
+      - name: Clear cache (invalidate key)
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-pip
+
       # Instalar dependências
       - name: Install dependencies
         run: |
@@ -31,8 +40,10 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Rodar os testes
+      # Executar testes
       - name: Run tests
         run: |
           source venv/bin/activate
           pytest app/tests
+
+          
