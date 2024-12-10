@@ -37,8 +37,8 @@ safetensors==0.4.5
 setuptools==75.6.0
 sympy==1.13.1
 tokenizers==0.20.3
-torch==2.5.1
-torchaudio==2.5.1+cpu
+torch==2.0.1+cpu
+torchaudio==2.0.1+cpu
 torchvision==0.20.1+cpu
 tqdm==4.67.1
 transformers==4.46.0
