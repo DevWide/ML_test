@@ -11,7 +11,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    env: 
+      ACTIONS_CACHE_URL: ""
     steps:
       # Checkout do repositório
       - name: Check out repository
@@ -45,5 +46,3 @@ jobs:
         run: |
           source venv/bin/activate
           pytest app/tests
-
-          
