@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env: 
       ACTIONS_CACHE_URL: ""
     steps:
@@ -18,11 +18,20 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
+
+      # Depuração antes de configurar o Python
+      - name: Debug current Python version
+        run: python --version || echo "Python not installed"
+
       # Configurar Python
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v4.1.0
         with:
           python-version: 3.10
+
+      # Depuração depois de configurar o Python
+      - name: Verify Python version
+        run: python --version
 
       # Limpar ou evitar cache de dependências
       - name: Clear cache (invalidate key)
