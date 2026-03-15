@@ -145,7 +145,7 @@ Performance and inference quality benchmarks are integrated into the pytest test
 
 Developed by Rafael da Silva Barbosa.
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License.
 
