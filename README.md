@@ -1,6 +1,6 @@
 # ML API Automation Testing Suite
 
-## 🚀 Project Overview
+## Project Overview
 
 This project is a Proof of Concept (PoC) demonstrating an automated testing suite for a web application serving predictions from a pre-trained Machine Learning (ML) model. 
 
@@ -14,7 +14,7 @@ The testing suite includes:
 
 ---
 
-## 📋 Features
+## Features
 - REST API with endpoints:
   - `/predict`: Accepts text input and returns sentiment predictions.
   - `/health`: Simple health check endpoint.
@@ -28,7 +28,7 @@ The testing suite includes:
 
 ---
 
-## 📊 Details of the ML Model
+## Details of the ML Model
 
 ### **Model Used**
 - **Name:** `distilbert-base-uncased-finetuned-sst-2-english`
@@ -56,7 +56,7 @@ Example response:
 }
 ```
 
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 1. Python 3.9+ installed on your system.
@@ -88,7 +88,7 @@ python app.py
 
 The server will run at ``http://127.0.0.1:5000``.
 
-## 🧪 Running the Tests
+## Running the Tests
 ### Unit and Benchmark Tests
 To run the unit benchmark tests:
 ```
@@ -113,7 +113,7 @@ Alternatively, to run tests headlessly:
 npx cypress run 
 ```
 
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 The CI/CD pipeline is implemented using GitHub Actions. It runs the following steps automatically on each push or pull request:
 
@@ -123,7 +123,7 @@ The CI/CD pipeline is implemented using GitHub Actions. It runs the following st
 
 You can view the pipeline configuration in the .github/workflows/ci.yml file.
 
-## 📊 Benchmarking
+## Benchmarking
 
 Performance and inference quality benchmarks are integrated into the pytest tests:
 
@@ -133,7 +133,7 @@ Performance and inference quality benchmarks are integrated into the pytest test
   - Input: `"This is terrible!"` → Prediction: `NEGATIVE`
   - Input: `"It's okay, I guess."` → Prediction: `POSITIVE`
 
-## 🛠 Future Improvements
+## Future Improvements
 
 - Add Docker support for containerized deployments.
 - Integrate visualization tools (e.g., Grafana) for monitoring benchmarking results.
@@ -141,7 +141,7 @@ Performance and inference quality benchmarks are integrated into the pytest test
 - Explore fine-tuning the sentiment analysis model on domain-specific data.
 
 
-## 👤 Author
+## Author
 
 Developed by Rafael da Silva Barbosa.
 
